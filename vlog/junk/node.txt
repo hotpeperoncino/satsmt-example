@@ -1,0 +1,14 @@
+// Modification example quoted from 19.1 datalog of Copmiler structure and optimization 2nd by NAKATA Ikuo
+
+// Type
+
+// Relation delcaration
+reach(v:vv,p:stm,q:stm)
+def(v:vv,p:stm) input
+next(v:stm,p:stm) input
+exit(p:stm) input
+succ(p:stm,q:stm) input
+use(v:vv,p:stm) input
+defuse(v:vv,p:stm,q:stm) output
+
+// Rule

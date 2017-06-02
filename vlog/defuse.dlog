@@ -1,0 +1,9 @@
+reach(x,p,q) :- def(x,p),next(p,q).
+reach(x,p,q) :- reach(x,p,r),def(y,r),next(r,q),x != y .
+reach(x,p,s) :- reach(x, p, r), exit( r), succ(r, s) .
+defuse(x,p,q) :- reach(x, p, q), use(x,q) .
+
+
+
+
+

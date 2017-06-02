@@ -1,0 +1,18 @@
+def(x,p) :- TE(x,<http://localhost/X#def>,p)
+next(p,q) :- TE(p,<http://localhost/X#def>,q)
+exit(r) :- TE(r,<http://localhost/X#exit>,<http://localhost/X#S0>)
+succ(r,s) :- TE(r,<http://localhost/X#succ>,s)
+use(x,q) :- TE(x,<http://localhost/X#use>,q)
+
+reach(x,p,q) :- def(x,p),next(p,q)
+reach(x,p,q) :- reach(x,p,r),def(y,r),next(r,q) 
+reach(x,p,s) :- reach(x, p, r), exit(r), succ(r, s) 
+defuse(x,p,q) :- reach(x, p, q), use(x,q) 
+
+
+
+
+
+
+
+
